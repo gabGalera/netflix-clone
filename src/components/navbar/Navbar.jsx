@@ -1,6 +1,6 @@
 import './navbar.scss'
 import React from "react";
-import { Notifications, Search } from '@material-ui/icons';
+import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
 
 const Navbar = () => {
   return(
@@ -15,9 +15,13 @@ const Navbar = () => {
           <span>My List</span>
         </div>
         <div className="right">
-          <Search />
+          <Search className='icon' />
           <span>KID</span>
-          <Notifications/>
+          <Notifications className='icon' />
+          <img src="https://avatars.githubusercontent.com/u/108902929?v=4" alt="Profile" />
+          <div className="profile">
+            <ArrowDropDown className='icon' />
+          </div>
         </div>
       </div>
     </div>
