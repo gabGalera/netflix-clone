@@ -28,10 +28,10 @@ const ListItem = ({ index }) => {
           />
           <div className="itemInfo">
             <div className="icons">
-              <PlayArrow />
-              <Add />
-              <ThumbUpAltOutlined />
-              <ThumbDownAltOutlined />
+              <PlayArrow className='icon' />
+              <Add className='icon' />
+              <ThumbUpAltOutlined className='icon' />
+              <ThumbDownAltOutlined className='icon' />
             </div>
             <div className="itemInfoTop">
               <span>1 hour 14 mins</span>
@@ -39,7 +39,7 @@ const ListItem = ({ index }) => {
               <span>1999</span>
             </div>
             <div className="desc">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem facilis quam nostrum fugit recusandae facere, minus hic voluptatum totam veritatis repellendus exercitationem saepe dolores soluta delectus pariatur perspiciatis! Soluta, aliquid.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sint dolor totam. Repudiandae quas veniam ea voluptatibus iste molestiae corporis nostrum alias ad amet, quis eum aspernatur blanditiis exercitationem porro!
             </div>
             <div className="genre">Action</div>
           </div>
