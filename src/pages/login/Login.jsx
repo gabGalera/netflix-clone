@@ -12,7 +12,7 @@ const Login = () => {
             alt="Netflix logo" />
         </div>
         <div className="container">
-          <form action="">
+          <form>
             <h1>Sign In</h1>
             <input type="email" placeholder='Email or phone number'/>
             <input type="password" placeholder='password' />
