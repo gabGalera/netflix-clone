@@ -28,7 +28,7 @@ const Featured = ({ type }) => {
       )}
       <img
         width='100%'
-        src="https://wallpaperaccess.com/full/3084028.jpg" 
+        src="https://wallpaperaccess.com/full/17520.jpg" 
         alt="Profile" 
       />
       <div className="info">

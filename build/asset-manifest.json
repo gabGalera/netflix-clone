@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2a866dfa.chunk.css",
+    "main.js": "/static/js/main.e2a2427c.chunk.js",
+    "main.js.map": "/static/js/main.e2a2427c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9412c5a0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9412c5a0.js.map",
+    "static/js/2.a19ccb90.chunk.js": "/static/js/2.a19ccb90.chunk.js",
+    "static/js/2.a19ccb90.chunk.js.map": "/static/js/2.a19ccb90.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.2a866dfa.chunk.css.map": "/static/css/main.2a866dfa.chunk.css.map",
+    "static/js/2.a19ccb90.chunk.js.LICENSE.txt": "/static/js/2.a19ccb90.chunk.js.LICENSE.txt",
+    "static/media/GameOfThronesOfficialTrailer.9e6ffad7.mp4": "/static/media/GameOfThronesOfficialTrailer.9e6ffad7.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9412c5a0.js",
+    "static/js/2.a19ccb90.chunk.js",
+    "static/css/main.2a866dfa.chunk.css",
+    "static/js/main.e2a2427c.chunk.js"
+  ]
+}
