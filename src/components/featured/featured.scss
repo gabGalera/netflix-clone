@@ -4,7 +4,7 @@
 
   .category{
     position: absolute;
-    top: 80px;
+    top: 16%;
     left: 50px;
     font-size: 30px;
     font-weight: bold;
@@ -29,17 +29,17 @@
   }
 
   .info{
-    width: 35%;
+    width: 30%;
     position: absolute;
     left: 50px;
-    bottom: 100px;
+    bottom: 50px;
     color: white;
     display: flex;
     flex-direction: column;
 
     img{
       width: 50%;
-      height: 30%;
+      height: auto;
     }
 
     .desc {
