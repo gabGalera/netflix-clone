@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
+const verify = require("../verifiyToken");
 
 //UPDATE
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", verify, async (req, res) => {
   if (req.user.id === req.params.id || req.user.isAdmin) {
     if (req.body.password) {
       req.body.password = CryptoJS.AES.encrypt(
@@ -18,7 +19,8 @@ router.put("/:id", async (req, res) => {
         req.params.id, 
         {
           $set:req.body
-        }
+        },
+        { new: true }
         );
       res.status(200).json(updatedUser);
     } catch(err) {
@@ -36,3 +38,5 @@ router.put("/:id", async (req, res) => {
 //GET ALL
 
 //GET USER STATS
+
+module.exports = router;
