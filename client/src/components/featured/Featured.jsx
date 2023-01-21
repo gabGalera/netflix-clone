@@ -1,9 +1,9 @@
-import './featured.scss';
-import React from 'react';
-import { InfoOutlined, PlayArrow } from '@material-ui/icons';
+import './featured.scss'
+import React from 'react'
+import { InfoOutlined, PlayArrow } from '@material-ui/icons'
 
 const Featured = ({ type }) => {
-  return(
+  return (
     <div className='featured'>
       {type && (
         <div className="category">
@@ -28,12 +28,12 @@ const Featured = ({ type }) => {
       )}
       <img
         width='100%'
-        src="https://wallpaperaccess.com/full/17520.jpg" 
-        alt="Profile" 
+        src="https://wallpaperaccess.com/full/17520.jpg"
+        alt="Profile"
       />
       <div className="info">
-        <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/TBBT_logo.svg/485px-TBBT_logo.svg.png" 
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/TBBT_logo.svg/485px-TBBT_logo.svg.png"
           alt="" />
         <span className='desc'>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem odio ea sequi ullam. Nulla quasi non eligendi incidunt necessitatibus velit. Est dolorem nemo, earum exercitationem dicta quod quae error aliquam!
@@ -53,4 +53,4 @@ const Featured = ({ type }) => {
   )
 }
 
-export default Featured;
+export default Featured

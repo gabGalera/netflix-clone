@@ -1,24 +1,26 @@
 import './navbar.scss'
-import React from "react";
-import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
-import { useState } from 'react';
+import React, { useState } from 'react'
+import { ArrowDropDown, Notifications, Search } from '@material-ui/icons'
+
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
 
   window.onscroll = () => {
-    setIsScrolled(window.scrollY === 0 ? false : true);
-    return () => (window.onscroll = null);
+    setIsScrolled(window.scrollY !== 0)
+    return () => (window.onscroll = null)
   }
 
   console.log(window.screenY)
   console.log(isScrolled)
-  return(
+  return (
     <div className={ isScrolled ? 'navbar scrolled' : 'navbar' }>
       <div className="container">
         <div className="left">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix logo" />
           <span>Homepage</span>
+          <Link></Link>
           <span>Series</span>
           <span>Movies</span>
           <span>New and Popular</span>
@@ -42,4 +44,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default Navbar

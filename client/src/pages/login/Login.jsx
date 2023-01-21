@@ -1,5 +1,5 @@
-import './login.scss';
-import React from "react";
+import './login.scss'
+import React from 'react'
 
 const Login = () => {
   return (
@@ -7,8 +7,8 @@ const Login = () => {
       <div className="top">
         <div className="wrapper">
           <img
-            className='logo' 
-            src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" 
+            className='logo'
+            src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
             alt="Netflix logo" />
         </div>
         <div className="container">
@@ -21,7 +21,7 @@ const Login = () => {
               New to Netflix? <b>Sign up now.</b>
             </span>
             <small>
-              This page is protected by Google reCAPTCHA to ensure you're not a 
+              This page is protected by Google reCAPTCHA to ensure you're not a
               bot. <b>Learn more</b>.
             </small>
           </form>
@@ -31,4 +31,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default Login
