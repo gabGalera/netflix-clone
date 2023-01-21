@@ -25,15 +25,19 @@ function App() {
         <Route path="/login">
           {!user ? <Login /> : <Redirect to="/" />}
         </Route>
-        <Route path="/movies">
-          <Home type="movies" />
-        </Route>
-        <Route path="/series">
-          <Home type="series" />
-        </Route>
-        <Route path="/watch">
-          <Watch />
-        </Route>
+        { user && (
+          <>
+            <Route path="/movies">
+              <Home type="movies" />
+            </Route>
+            <Route path="/series">
+              <Home type="series" />
+            </Route>
+            <Route path="/watch">
+              <Watch />
+            </Route>
+          </>
+        )}
       </Switch>
     </Router>
   );
