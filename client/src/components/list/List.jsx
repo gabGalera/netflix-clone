@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons';
 import ListItem from '../listItem/ListItem';
 
-function List() {
+function List({ list }) {
   const [isMoved, setIsMoved] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
 
@@ -24,7 +24,8 @@ function List() {
 
   return (
     <div className="list">
-      <span className="listTitle">Continue to watch</span>
+      {console.log(list)}
+      <span className="listTitle">{list.title}</span>
       <div className="wrapper">
         <ArrowBackIosOutlined
           className="sliderArrow left"
