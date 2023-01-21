@@ -1,43 +1,41 @@
-import './navbar.scss'
-import React, { useState } from 'react'
-import { ArrowDropDown, Notifications, Search } from '@material-ui/icons'
+import './navbar.scss';
+import React, { useState } from 'react';
+import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
+function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
 
   window.onscroll = () => {
-    setIsScrolled(window.scrollY !== 0)
-    return () => (window.onscroll = null)
-  }
+    setIsScrolled(window.scrollY !== 0);
+    return () => { (window.onscroll = null); };
+  };
 
-  console.log(window.screenY)
-  console.log(isScrolled)
   return (
-    <div className={ isScrolled ? 'navbar scrolled' : 'navbar' }>
+    <div className={isScrolled ? 'navbar scrolled' : 'navbar'}>
       <div className="container">
         <div className="left">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix logo" />
-          <Link to="/" className='link'>
+          <Link to="/" className="link">
             <span>Homepage</span>
           </Link>
-          <Link to="/series" className='link'>
+          <Link to="/series" className="link">
             <span>Series</span>
           </Link>
-          <Link to="/movies" className='link'>
+          <Link to="/movies" className="link">
             <span>Movies</span>
           </Link>
           <span>New and Popular</span>
           <span>My List</span>
         </div>
         <div className="right">
-          <Search className='icon' />
+          <Search className="icon" />
           <span>KID</span>
-          <Notifications className='icon' />
+          <Notifications className="icon" />
           <img src="https://avatars.githubusercontent.com/u/108902929?v=4" alt="Profile" />
           <div className="profile">
-            <ArrowDropDown className='icon' />
+            <ArrowDropDown className="icon" />
             <div className="options">
               <span>Settings</span>
               <span>Logout</span>
@@ -46,7 +44,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

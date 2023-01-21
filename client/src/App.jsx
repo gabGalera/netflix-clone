@@ -1,20 +1,29 @@
-import './app.scss'
-import Home from './pages/home/Home'
-import Watch from './pages/watch/Watch'
-import React from 'react'
+import './app.scss';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
-  // Link
-} from 'react-router-dom'
+  Route,
+  Redirect,
+} from 'react-router-dom';
+import Home from './pages/home/Home';
+import Watch from './pages/watch/Watch';
+import Register from './pages/register/Register';
+import Login from './pages/login/Login';
 
-const App = () => {
+function App() {
+  const user = true;
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          {user ? <Home /> : <Redirect to="/register" />}
+        </Route>
+        <Route path="/register">
+          {!user ? <Register /> : <Redirect to="/" />}
+        </Route>
+        <Route path="/login">
+          {!user ? <Login /> : <Redirect to="/" />}
         </Route>
         <Route path="/movies">
           <Home type="movies" />
@@ -27,7 +36,7 @@ const App = () => {
         </Route>
       </Switch>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,34 +1,40 @@
-import './login.scss'
-import React from 'react'
+import './login.scss';
+import React from 'react';
 
-const Login = () => {
+function Login() {
   return (
-    <div className='login'>
+    <div className="login">
       <div className="top">
         <div className="wrapper">
           <img
-            className='logo'
+            className="logo"
             src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-            alt="Netflix logo" />
+            alt="Netflix logo"
+          />
         </div>
         <div className="container">
           <form>
             <h1>Sign In</h1>
-            <input type="email" placeholder='Email or phone number'/>
-            <input type="password" placeholder='password' />
-            <button className="loginButton">Sign In</button>
+            <input type="email" placeholder="Email or phone number" />
+            <input type="password" placeholder="password" />
+            <button type="button" className="loginButton">Sign In</button>
             <span>
-              New to Netflix? <b>Sign up now.</b>
+              New to Netflix?
+              {' '}
+              <b>Sign up now.</b>
             </span>
             <small>
               This page is protected by Google reCAPTCHA to ensure you're not a
-              bot. <b>Learn more</b>.
+              bot.
+              {' '}
+              <b>Learn more</b>
+              .
             </small>
           </form>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

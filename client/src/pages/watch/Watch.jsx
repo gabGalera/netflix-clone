@@ -1,9 +1,9 @@
-import './watch.scss'
-import React from 'react'
-import trailer from '../../videos/GameOfThronesOfficialTrailer.mp4'
-import { ArrowBackOutlined } from '@material-ui/icons'
+import './watch.scss';
+import React from 'react';
+import { ArrowBackOutlined } from '@material-ui/icons';
+import trailer from '../../videos/GameOfThronesOfficialTrailer.mp4';
 
-const Watch = () => {
+function Watch() {
   return (
     <div className="watch">
       <div className="back">
@@ -11,14 +11,14 @@ const Watch = () => {
         Home
       </div>
       <video
-        src={ trailer }
+        src={trailer}
         className="video"
         autoPlay
         progress
         controls
       />
     </div>
-  )
+  );
 }
 
-export default Watch
+export default Watch;
