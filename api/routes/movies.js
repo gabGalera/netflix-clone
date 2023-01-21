@@ -93,8 +93,6 @@ router.get("/random", verify, async (req, res) => {
 
 // GET ALL
 
-// DELETE
-
 router.get("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
     try {
