@@ -23,5 +23,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'react/jsx-filename-extension': 0,
     'max-len': 0,
+    'no-unused-vars': 0,
   },
 };

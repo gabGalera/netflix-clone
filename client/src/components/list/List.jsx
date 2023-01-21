@@ -1,6 +1,7 @@
 import './list.scss';
 import React, { useState, useRef } from 'react';
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons';
+import PropTypes from 'prop-types';
 import ListItem from '../listItem/ListItem';
 
 function List({ list }) {
@@ -52,5 +53,13 @@ function List({ list }) {
     </div>
   );
 }
+
+List.defaultProps = {
+  list: {},
+};
+
+List.propTypes = {
+  list: PropTypes.shape,
+};
 
 export default List;
