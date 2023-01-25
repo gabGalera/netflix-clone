@@ -1,12 +1,21 @@
 import './listItem.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Add, PlayArrow, ThumbDownAltOutlined, ThumbUpAltOutlined,
 } from '@material-ui/icons';
-import trailer from '../../videos/GameOfThronesOfficialTrailer.mp4';
 
-function ListItem({ index }) {
+function ListItem({ index, item }) {
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const getMovie = async () => {
+      try {
+        // const res = await axios
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  });
   return (
     <div
       className="listItem"
@@ -15,7 +24,7 @@ function ListItem({ index }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Tjj3ylZ81ZVhaCHOHesA1yfDO73HUMcTog&usqp=CAU"
+        src={item.img}
         alt="Game of Thrones logo"
       />
       {isHovered && (
@@ -24,7 +33,7 @@ function ListItem({ index }) {
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            src={trailer}
+            src={item.trailer}
             autoPlay
             loop
           />
@@ -36,14 +45,17 @@ function ListItem({ index }) {
               <ThumbDownAltOutlined className="icon" />
             </div>
             <div className="itemInfoTop">
-              <span>1 hour 14 mins</span>
-              <span className="limit">+16</span>
-              <span>1999</span>
+              <span>{item.duration}</span>
+              <span className="limit">
+                +
+                {item.limit}
+              </span>
+              <span>{item.year}</span>
             </div>
             <div className="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sint dolor totam. Repudiandae quas veniam ea voluptatibus iste molestiae corporis nostrum alias ad amet, quis eum aspernatur blanditiis exercitationem porro!
+              {item.desc}
             </div>
-            <div className="genre">Action</div>
+            <div className="genre">{item.genre}</div>
           </div>
         </>
       )}

@@ -7,7 +7,10 @@ import Featured from '../../components/featured/Featured';
 import List from '../../components/list/List';
 
 function Home({ type }) {
-  const [lists, setLists] = useState([]);
+  const [lists, setLists] = useState([{
+    title: '',
+    content: [],
+  }]);
   const [genre, setGenre] = useState(null);
 
   useEffect(() => {
@@ -19,7 +22,6 @@ function Home({ type }) {
             'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc0NmI5YmQ4ZTE0Nzg4MzZlYzQyNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDMyNDM4NywiZXhwIjoxNjc0NzU2Mzg3fQ.OWm_vcAK4x9PU_eAMynyTAC2GQq8q8YkOTFfCyTPFC8',
           },
         });
-        console.log(res.data);
         setLists(res.data);
       } catch (err) {
         console.error(err);

@@ -25,7 +25,6 @@ function List({ list }) {
 
   return (
     <div className="list">
-      {console.log(list)}
       <span className="listTitle">{list.title}</span>
       <div className="wrapper">
         <ArrowBackIosOutlined
@@ -34,16 +33,11 @@ function List({ list }) {
           style={{ display: !isMoved && 'none' }}
         />
         <div className="container" ref={listRef}>
+          {console.log(list)}
+          {list.content.map((item, i) => (
+            <ListItem index={i} item={item} />
+          ))}
           <ListItem index={0} />
-          <ListItem index={1} />
-          <ListItem index={2} />
-          <ListItem index={3} />
-          <ListItem index={4} />
-          <ListItem index={5} />
-          <ListItem index={6} />
-          <ListItem index={7} />
-          <ListItem index={8} />
-          <ListItem index={9} />
         </div>
         <ArrowForwardIosOutlined
           className="sliderArrow right"
@@ -55,7 +49,10 @@ function List({ list }) {
 }
 
 List.defaultProps = {
-  list: {},
+  list: {
+    title: '',
+    content: [],
+  },
 };
 
 List.propTypes = {
