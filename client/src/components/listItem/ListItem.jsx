@@ -1,5 +1,6 @@
 import './listItem.scss';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Add, PlayArrow, ThumbDownAltOutlined, ThumbUpAltOutlined,
 } from '@material-ui/icons';
@@ -28,26 +29,27 @@ function ListItem({ index, item }) {
     getMovie();
   }, [item]);
   return (
-    <div
-      className="listItem"
-      style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <img
-        src={movie.img}
-        alt="Game of Thrones logo"
-      />
-      {isHovered && (
+    <Link to={{ pathname: '/watch', movie }}>
+      <div
+        className="listItem"
+        style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <img
+          src={movie.img}
+          alt="Game of Thrones logo"
+        />
+        {isHovered && (
         <>
           <iframe
             width="100%"
             height="140px"
-            src={movie.video}
+            src={`${movie.trailer}?autoplay=1`}
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           />
           <div className="itemInfo">
             <div className="icons">
@@ -70,8 +72,9 @@ function ListItem({ index, item }) {
             <div className="genre">{movie.genre}</div>
           </div>
         </>
-      )}
-    </div>
+        )}
+      </div>
+    </Link>
   );
 }
 
