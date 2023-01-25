@@ -27,13 +27,13 @@ function List({ list }) {
     <div className="list">
       <span className="listTitle">{list.title}</span>
       <div className="wrapper">
+        {console.log(list)}
         <ArrowBackIosOutlined
           className="sliderArrow left"
           onClick={() => handleClick('left')}
           style={{ display: !isMoved && 'none' }}
         />
         <div className="container" ref={listRef}>
-          {console.log(list)}
           {list.content.map((item, i) => (
             <ListItem index={i} item={item} />
           ))}

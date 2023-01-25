@@ -3,19 +3,30 @@ import React, { useState, useEffect } from 'react';
 import {
   Add, PlayArrow, ThumbDownAltOutlined, ThumbUpAltOutlined,
 } from '@material-ui/icons';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 
 function ListItem({ index, item }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [movie, setMovie] = useState({});
 
   useEffect(() => {
     const getMovie = async () => {
       try {
-        // const res = await axios
+        console.log(item);
+        const res = await axios.get(`movies/find/${item}`, {
+          headers: {
+            token:
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc0NmI5YmQ4ZTE0Nzg4MzZlYzQyNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDY2MDIzMCwiZXhwIjoxNjc1MDkyMjMwfQ.YabgLgt7vrEd30FdTgUSBw2CoqyQkM6k8kb0YFA5cxg',
+          },
+        });
+        setMovie(res.data);
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     };
-  });
+    getMovie();
+  }, [item]);
   return (
     <div
       className="listItem"
@@ -24,18 +35,19 @@ function ListItem({ index, item }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
-        src={item.img}
+        src={movie.img}
         alt="Game of Thrones logo"
       />
       {isHovered && (
         <>
-          <video
+          <iframe
+            width="100%"
+            height="140px"
+            src={movie.video}
             title="YouTube video player"
-            frameBorder="0"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            src={item.trailer}
-            autoPlay
-            loop
+            allowfullscreen
           />
           <div className="itemInfo">
             <div className="icons">
@@ -45,22 +57,31 @@ function ListItem({ index, item }) {
               <ThumbDownAltOutlined className="icon" />
             </div>
             <div className="itemInfoTop">
-              <span>{item.duration}</span>
+              <span>{movie.duration}</span>
               <span className="limit">
                 +
-                {item.limit}
+                {movie.limit}
               </span>
-              <span>{item.year}</span>
+              <span>{movie.year}</span>
             </div>
             <div className="desc">
-              {item.desc}
+              {movie.desc}
             </div>
-            <div className="genre">{item.genre}</div>
+            <div className="genre">{movie.genre}</div>
           </div>
         </>
       )}
     </div>
   );
 }
+
+ListItem.defaultProps = {
+  item: '',
+};
+
+ListItem.propTypes = {
+  index: PropTypes.number.isRequired,
+  item: PropTypes.string,
+};
 
 export default ListItem;
