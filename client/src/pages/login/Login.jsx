@@ -24,7 +24,7 @@ function Login() {
               <b>Sign up now.</b>
             </span>
             <small>
-              This page is protected by Google reCAPTCHA to ensure you're not a
+              This page is protected by Google reCAPTCHA to ensure you are not a
               bot.
               {' '}
               <b>Learn more</b>
