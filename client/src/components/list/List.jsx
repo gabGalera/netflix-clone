@@ -37,7 +37,7 @@ function List({ list }) {
           {list.content.map((item, i) => (
             <ListItem index={i} item={item} />
           ))}
-          <ListItem index={0} />
+          {/* <ListItem index={0} /> */}
         </div>
         <ArrowForwardIosOutlined
           className="sliderArrow right"

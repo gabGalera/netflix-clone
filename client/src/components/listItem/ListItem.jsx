@@ -37,7 +37,7 @@ function ListItem({ index, item }) {
         onMouseLeave={() => setIsHovered(false)}
       >
         <img
-          src={movie.img}
+          src={movie.imgSm}
           alt="Game of Thrones logo"
         />
         {isHovered && (
@@ -65,11 +65,11 @@ function ListItem({ index, item }) {
                 {movie.limit}
               </span>
               <span>{movie.year}</span>
+              <span className="genre">{movie.genre}</span>
             </div>
             <div className="desc">
               {movie.desc}
             </div>
-            <div className="genre">{movie.genre}</div>
           </div>
         </>
         )}
