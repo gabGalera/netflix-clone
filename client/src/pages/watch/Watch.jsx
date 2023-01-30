@@ -2,11 +2,9 @@ import './watch.scss';
 import React from 'react';
 import { ArrowBackOutlined } from '@material-ui/icons';
 import { Link, useLocation } from 'react-router-dom';
-import trailer from '../../videos/GameOfThronesOfficialTrailer.mp4';
 
 function Watch() {
   const location = useLocation();
-  console.log(location);
   return (
     <div className="watch">
       <Link to="/">

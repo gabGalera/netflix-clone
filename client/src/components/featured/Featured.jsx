@@ -1,8 +1,29 @@
 import './featured.scss';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { InfoOutlined, PlayArrow } from '@material-ui/icons';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
 function Featured({ type }) {
+  const [content, setContent] = useState({});
+
+  useEffect(() => {
+    const getRandomContent = async () => {
+      try {
+        const res = await axios.get(`/movies/random?type=${type}`, {
+          headers: {
+            token:
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc0NmI5YmQ4ZTE0Nzg4MzZlYzQyNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDY2MDIzMCwiZXhwIjoxNjc1MDkyMjMwfQ.YabgLgt7vrEd30FdTgUSBw2CoqyQkM6k8kb0YFA5cxg',
+          },
+        });
+        setContent(res.data[0]);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getRandomContent();
+  }, [type]);
+
   return (
     <div className="featured">
       {type && (
@@ -28,23 +49,23 @@ function Featured({ type }) {
       )}
       <img
         width="100%"
-        src="https://wallpaperaccess.com/full/17520.jpg"
-        alt="Profile"
+        src={content.img}
+        alt=""
       />
       <div className="info">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/TBBT_logo.svg/485px-TBBT_logo.svg.png"
+          src={content.imgTitle}
           alt=""
         />
         <span className="desc">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem odio ea sequi ullam. Nulla quasi non eligendi incidunt necessitatibus velit. Est dolorem nemo, earum exercitationem dicta quod quae error aliquam!
+          {content.desc}
         </span>
         <div className="buttons">
-          <button className="play">
+          <button type="button" className="play">
             <PlayArrow />
             <span>Play</span>
           </button>
-          <button className="more">
+          <button type="button" className="more">
             <InfoOutlined />
             <span>Info</span>
           </button>
@@ -53,5 +74,9 @@ function Featured({ type }) {
     </div>
   );
 }
+
+Featured.propTypes = {
+  type: PropTypes.string.isRequired,
+};
 
 export default Featured;
