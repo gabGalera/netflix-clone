@@ -38,6 +38,7 @@ function Register() {
                 <div className="input">
                   <input type="email" placeholder="email address" ref={emailRef} />
                   <button
+                    type="button"
                     className="registerButton"
                     onClick={handleStart}
                   >
@@ -49,6 +50,7 @@ function Register() {
                 <form className="input">
                   <input type="password" placeholder="password" ref={passwordRef} />
                   <button
+                    type="button"
                     className="registerButton"
                     onClick={handleFinish}
                   >
