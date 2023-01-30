@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { InfoOutlined, PlayArrow } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Featured({ type }) {
   const [content, setContent] = useState({});
+  const [movie, setMovie] = useState({});
 
   useEffect(() => {
     const getRandomContent = async () => {
@@ -17,6 +19,7 @@ function Featured({ type }) {
           },
         });
         setContent(res.data[0]);
+        setMovie(res.data[0]);
       } catch (err) {
         console.log(err);
       }
@@ -61,10 +64,12 @@ function Featured({ type }) {
           {content.desc}
         </span>
         <div className="buttons">
-          <button type="button" className="play">
-            <PlayArrow />
-            <span>Play</span>
-          </button>
+          <Link to={{ pathname: '/watch', movie }} style={{ textDecoration: 'none' }}>
+            <button type="button" className="play">
+              <PlayArrow />
+              <span>Play</span>
+            </button>
+          </Link>
           <button type="button" className="more">
             <InfoOutlined />
             <span>Info</span>
