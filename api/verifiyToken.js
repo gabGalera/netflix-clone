@@ -11,8 +11,7 @@ const verify = (req, res, next) => {
       next()
     })
   } else {
-    next()
-    // return res.status(401).json("You are not authenticated!");
+    return res.status(401).json("You are not authenticated!");
   }
 
 }
