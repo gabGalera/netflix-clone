@@ -19,7 +19,7 @@ function Home({ type }) {
         const res = await axios.get(`${process.env.REACT_APP_API_HOST}lists${type ? `?type=${type}` : ''}${genre ? `&genre=${genre}` : ''}`, {
           headers: {
             token:
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc0NmI5YmQ4ZTE0Nzg4MzZlYzQyNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NTA5NjAzMywiZXhwIjoxNjc1NTI4MDMzfQ.HJc9js0fgO2xM0RooLhoGgz10OVE8qXO_kW3S0GvsJo',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc0NmI5YmQ4ZTE0Nzg4MzZlYzQyNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NTUyNzAzMSwiZXhwIjoxNzA3MDYzMDMxfQ.ITYgBXr2aJDxpLO542GbRrYSG-DmJkKy633tRiCryzo',
           },
         });
         setLists(res.data);
