@@ -11,7 +11,7 @@ Para rodar em sua máquina, são necessários dois terminais, um para a pasta ap
 ```
 npm install
 ```
-e na sequência o comando:
+e na sequência, novamente em ambos os terminais, o comando:
 ```
 npm start
 ```
@@ -26,7 +26,7 @@ e o projeto deve começar a funcionar em alguns segundos.
 * React-Router
 * React Hooks
 
-## Aulas e referẽncias: 
+## Aulas e referências: 
   * https://www.youtube.com/watch?v=FzWG8jiw4XM [completed]
   * https://www.youtube.com/watch?v=tsNswx0nRKM [in progress]
   * https://www.youtube.com/watch?v=aTPkos3LKi8 [in Progress]
