@@ -9,13 +9,22 @@ Prévia de uma aplicação em MongoDB (com a base de dados hospedada na platafor
 
 Para rodar em sua máquina, são necessários dois terminais, um para a pasta api e outro para pasta client. Em ambos os terminais, digite o comando:
 ```
-npm instal
+npm install
 ```
 e na sequência o comando:
 ```
 npm start
 ```
 e o projeto deve começar a funcionar em alguns segundos.
+
+## Construído com
+
+* MongoDB
+* Express
+* React
+* NodeJS
+* React-Router
+* React Hooks
 
 ## Aulas e referẽncias: 
   * https://www.youtube.com/watch?v=FzWG8jiw4XM [completed]
